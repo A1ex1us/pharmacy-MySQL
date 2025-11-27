@@ -14,16 +14,11 @@
 ### Основные сущности
 | Таблица        | Поля                                                                 |
 |----------------|----------------------------------------------------------------------|
-| `Suppliers`    | id, name, city, contract_date                                       |
-| `Medicines`    | id, name, group, manufacturer, country                             |
-| `Orders`       | id, supplier_id, order_date, expected_date, actual_date, total_cost|
-| `OrderItems`   | order_id, medicine_id, quantity, price_per_unit                     |
-| `Stock`        | medicine_id, batch_date, quantity, purchase_price                  |
-
-### Связи
-- `Orders` → `Suppliers` (1 ко многим)
-- `OrderItems` → `Orders` + `Medicines` (многие ко многим)
-- `Stock` → `Medicines` (1 ко многим)
+| `supplier`    | id_s, name, city, end_day, agreement_day                                       |
+| `drug`    | id_d, name, group, firm, country                             |
+| `order`       | id_o, price, date_preparation, date_get, date_fact, id_a                |
+| `order_line`   | id_ol, amount, price, id_a, id_b                     |
+| `now_in_store`        | id_st, price, amount, id_a                  |
 
 ---
 
